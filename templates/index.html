@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+  </head>
+  <body>
+    <div ng-app="testing_flask_injector" ng-controller="HomeCtrl">
+      [[ data ]]
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+    {{ angular_injection_renderer(inject_context()) | safe }}
+    <script type="text/javascript">
+      var app = angular.module('testing_flask_injector',['flask_injection']);
+      app.config(function($interpolateProvider){
+        $interpolateProvider.startSymbol('[[');
+        $interpolateProvider.endSymbol(']]');
+      });
+      app.controller('HomeCtrl',['$flask','$scope',function($flask,$scope){
+        $scope.data = $flask;
+      }])
+
+    </script>
+  </body>
+</html>

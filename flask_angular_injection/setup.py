@@ -2,7 +2,7 @@
 Flask-Angular-Injection
 -------------
 
-This is the description for that library
+Flask extension to inject Flask data into AngularJS controller through a service.
 """
 from setuptools import setup
 
@@ -10,16 +10,13 @@ from setuptools import setup
 setup(
     name='Flask-Angular-Injection',
     version='1.0',
-    url='http://example.com/flask-sqlite3/',
-    license='BSD',
-    author='Your Name',
-    author_email='your-email@example.com',
-    description='Very short description',
+    url='http://github.io/flask-angular-injection/',
+    license='MIT',
+    author='Sujeet Pillai',
+    author_email='sujeet.pillai@gmail.com',
+    description='Flask extension to inject Flask data into angularjs through a service',
     long_description=__doc__,
-    py_modules=['flask_angular_injection'],
-    # if you would be using a package instead use packages instead
-    # of py_modules:
-    # packages=['flask_sqlite3'],
+    packages=['flask_sqlite3'],
     zip_safe=False,
     include_package_data=True,
     platforms='any',
